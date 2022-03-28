@@ -1,6 +1,7 @@
 package com.company;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Main {
 
@@ -11,6 +12,7 @@ public class Main {
         checkDouble("aabccddefgghiijjkk");
         int[] arr = {3, 2, 1, 6, 5};
         reverseArr(arr);
+        System.out.println(Arrays.toString(arr));
     }
     //task1
     public static void typeIsLeapYear(int year) {
@@ -64,18 +66,26 @@ public class Main {
 
         for (char c : letters) {
             if (c == previousChar) {
-                System.out.print(c);
+                System.out.println(c);
+                return;
             }
             previousChar = c;
         }
         System.out.println("Дубль не найден");
     }
 
+
     //task5
     public static void reverseArr(int [] array) {
-
-        for (int i = array.length - 1; i >= 0; i--) {
-            System.out.print(array[i] + " ");
+        if(array.length<=1){
+            return;
+        }
+        int start = 0;
+        int end = array.length-1;
+        while (start<end){
+            int output = array[start];
+            array[start++]=array[end];
+            array[end--]=output;
         }
     }
 
